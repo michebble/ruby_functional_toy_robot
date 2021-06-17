@@ -1,7 +1,12 @@
+require "data"
+require "report"
+
 class ToyRobot
   class << self
     def call(commands)
-      "0,1,NORTH"
+      Data
+        .call({x: 0, y: 1, direction: :north})
+        .then(&Report)
     end
   end
 end
